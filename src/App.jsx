@@ -27,7 +27,7 @@ function TypingIntro({ text }) {
 export default function App() {
   const introText = "✋ I'm a Computer Science student at Reichman University, currently working as a Data Engineer. While my professional experience centers on building data pipelines and processing large-scale datasets, I've also developed a passion for software development through academic projects.\n\nI’ve built full-stack apps, real-time computer vision systems, and automation tools as part of university assignments and personal explorations. I'm proud to be on the Dean’s List and maintain a high GPA, but what truly drives me is learning by doing — this portfolio highlights some of the things I've built, explored, and enjoyed.";
   return (
-    <div style={{ fontFamily: 'sans-serif', padding: '2rem', maxWidth: '800px', margin: 'auto' }}>
+    <div style={{ fontFamily: 'sans-serif', padding: '2rem', maxWidth: '800px', margin: 'auto', width: '100%', boxSizing: 'border-box'}}>
       <h1>Itay Wagner</h1>
       <h2>Data Engineer & Aspiring Software Developer</h2>
       <div style={{ minHeight: '23em' }}>
