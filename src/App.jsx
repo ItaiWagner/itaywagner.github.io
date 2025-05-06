@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './App.css';
+import SideNavbar from './components/SideNavbar';
 
-function TypingIntro({ text }) {
+function TypingIntro({ text, onComplete }) {
   const [typedText, setTypedText] = useState('');
   const [i, setI] = useState(0);
 
@@ -12,8 +13,10 @@ function TypingIntro({ text }) {
         setI(i + 1);
       }, 18);
       return () => clearTimeout(timeout);
+    } else {
+      onComplete && onComplete();
     }
-  }, [i, text]);
+  }, [i, text, onComplete]);
 
   return (
     <p className="typing">
@@ -23,18 +26,36 @@ function TypingIntro({ text }) {
   );
 }
 
-
 export default function App() {
-  const introText = "✋ I'm a Computer Science student at Reichman University, currently working as a Data Engineer. While my professional experience centers on building data pipelines and processing large-scale datasets, I've also developed a passion for software development through academic projects.\n\nI’ve built full-stack apps, real-time computer vision systems, and automation tools as part of university assignments and personal explorations. I'm proud to be on the Dean’s List and maintain a high GPA, but what truly drives me is learning by doing — this portfolio highlights some of the things I've built, explored, and enjoyed.";
+  const [typingDone, setTypingDone] = useState(false);
+  const projectsRef = useRef(null);
+  
+  const introText = "✋ I'm a Computer Science student at Reichman University, currently working as a Data Engineer. While my professional experience centers on building data pipelines and processing large-scale datasets, I've also developed a passion for software development through academic projects.\n\nI've built full-stack apps, real-time computer vision systems, and automation tools as part of university assignments and personal explorations. I'm proud to be on the Dean's List and maintain a high GPA, but what truly drives me is learning by doing — this portfolio highlights some of the things I've built, explored, and enjoyed.";
+  
+  // Scroll to projects section after intro is done
+  useEffect(() => {
+    if (typingDone && projectsRef.current) {
+      const scrollTimer = setTimeout(() => {
+        projectsRef.current.scrollIntoView({ behavior: 'smooth' });
+      }, 5000);
+      
+      return () => clearTimeout(scrollTimer);
+    }
+  }, [typingDone]);
+
   return (
     <div style={{ fontFamily: 'sans-serif', padding: '2rem', maxWidth: '800px', margin: 'auto', width: '100%', boxSizing: 'border-box'}}>
+      <SideNavbar />
       <h1>Itay Wagner</h1>
       <h2>Data Engineer & Aspiring Software Developer</h2>
       <div style={{ minHeight: '23em' }}>
-        <TypingIntro text={introText} onDone={() => setTypingDone(true)} />
+        <TypingIntro 
+          text={introText} 
+          onComplete={() => setTypingDone(true)} 
+        />
       </div>
 
-      <h2>🚀 Featured Projects</h2>
+      <h2 ref={projectsRef}>🚀 Featured Projects</h2>
       <ul>
         <li>
           <strong>Table Tennis Analyzer</strong><br />
@@ -73,13 +94,6 @@ export default function App() {
           <a href="https://drive.google.com/file/d/1ibLYZkLMujx1OomtBW9V2oHTkLGJoMiN/view?usp=sharing" target="_blank" rel="noopener noreferrer">🎥 Watch Demo</a>
         </li>
       </ul>
-
-      <h2>📫 Contact</h2>
-      <p>
-        <a href="mailto:itaywagner@gmail.com">✉️ Email</a>
-        <a href="https://www.linkedin.com/in/itay-wagner-6a3551210/" target="_blank" rel="noopener noreferrer"> 🔗 LinkedIn</a>
-        <a href="https://github.com/ItaiWagner" target="_blank" rel="noopener noreferrer"> 📖 GitHub</a>
-      </p>
     </div>
   );
 }
