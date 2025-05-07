@@ -321,6 +321,66 @@ strong:hover {
   }
 }
 
+@media (max-width: 480px) {
+  #root {
+    padding: 0.75rem;
+  }
+
+  .intro-description {
+    margin-bottom: 0.5rem; /* Adjust this value as needed - smaller = less space */
+  }
+  
+  h1 {
+    font-size: 1.8em;
+  }
+  
+  h2 {
+    font-size: 1.4em;
+  }
+  
+  .card {
+    padding: 1em;
+  }
+  
+  a {
+    padding: 0.4rem 0.8rem;
+    margin: 0.4rem;
+    font-size: 0.9em;
+  }
+
+  /* Ensure navbar is visible on iPhone */
+  .side-navbar {
+    right: 0;
+    padding: 10px 6px;
+    gap: 10px;
+  }
+  
+  .side-navbar.closed {
+    right: -50px;
+  }
+  
+  .side-navbar-toggle {
+    right: 60px;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .side-navbar-toggle.closed {
+    right: 10px;
+  }
+  
+  .side-navbar a {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .side-navbar img, .email-emoji, .cv-emoji {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+  }
+}
+
 /* Style for email emoji */
 .email-emoji {
   font-size: 24px;
