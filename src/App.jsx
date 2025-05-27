@@ -57,16 +57,25 @@ export default function App() {
 
       <h2 ref={projectsRef}>🚀 Featured Projects</h2>
       <ul>
+        <li style={{ marginTop: '1rem' }}>
+          <strong>The Chase - Multiplayer Trivia Game</strong><br />
+          Fast paced multiplayer trivia game, featuring "Hamirdaf" trivia tv show theme with fun new features<br />
+          <a href="https://drive.google.com/file/d/1sKo6n6TN_5iztUsYgKn0YBAwoz2V8z64/view?usp=sharing" target="_blank" rel="noopener noreferrer">🎥 Watch Demo</a>
+          <a href="https://github.com/ItaiWagner/HW3_EX2" target="_blank" rel="noopener noreferrer">📖 GitHub</a>
+
+        </li>
         <li>
           <strong>Table Tennis Analyzer</strong><br />
           Computer vision tool using YOLO and EasyOCR to extract and visualize player positions and scores.<br />
           <a href="https://drive.google.com/file/d/17yKUu1Oa0rCwlK_Ml8Srobn43-qRjKnC/view?usp=sharing" target="_blank" rel="noopener noreferrer">🎥 Watch Demo</a>
+          <a href="https://github.com/ItaiWagner/HW2_EX1" target="_blank" rel="noopener noreferrer">📖 GitHub</a>
         </li>
 
         <li style={{ marginTop: '1rem' }}>
           <strong>Military Base Intelligence Interface</strong><br />
           Streamlit app enhanced with AI (Gemini + Dolphin) to analyze satellite images and generate reports.<br />
           <a href="https://drive.google.com/file/d/15zlez6y6afmIhhOXH0n-1Qi2ou-2kJjY/view?usp=sharing" target="_blank" rel="noopener noreferrer">🎥 Watch Demo</a>
+          <a href="https://github.com/ItaiWagner/HW2_EX2" target="_blank" rel="noopener noreferrer">📖 GitHub</a>
         </li>
 
         <li style={{ marginTop: '1rem' }}>
@@ -74,6 +83,7 @@ export default function App() {
           A fast-paced vertical platformer inspired by Icy Tower. Fully playable in browser.<br />
           <a href="https://drive.google.com/file/d/1IoYqpzNIdvnY-Wjo1QrMAVwTrHDDyZbd/view?usp=sharing" target="_blank" rel="noopener noreferrer">🎥 Watch Demo</a>  
           <a href="https://icylegends.netlify.app/" target="_blank" rel="noopener noreferrer">  🕹️ Play Game</a>
+          <a href="https://github.com/ItaiWagner/HW1_EX2" target="_blank" rel="noopener noreferrer">📖 GitHub</a>
         </li>
 
         <li style={{ marginTop: '1rem' }}>
@@ -86,12 +96,14 @@ export default function App() {
         <li style={{ marginTop: '1rem' }}>
           <strong>Telegram Face Recognition Bot</strong><br />
           Python bot for adding, recognizing, and blending faces via Telegram. Includes tsne-based face similarity mapping.<br />
+          <a href="https://github.com/ItaiWagner/HW1_EX1" target="_blank" rel="noopener noreferrer">📖 GitHub</a>
         </li>
 
         <li style={{ marginTop: '1rem' }}>
           <strong>Morties Attack (Nand2Tetris Game in Jack)</strong><br />
           A 2D arcade-style shooter built from scratch in Jack as part of the Nand2Tetris course.<br />
           <a href="https://drive.google.com/file/d/1ibLYZkLMujx1OomtBW9V2oHTkLGJoMiN/view?usp=sharing" target="_blank" rel="noopener noreferrer">🎥 Watch Demo</a>
+          <a href="https://github.com/ItaiWagner/MortiesAttack" target="_blank" rel="noopener noreferrer">📖 GitHub</a>
         </li>
       </ul>
     </div>
